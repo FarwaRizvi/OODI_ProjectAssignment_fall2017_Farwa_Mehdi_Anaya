@@ -1,0 +1,149 @@
+<ion-header *ngIf="!ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackPageButton" Style="color:white;" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+            <ion-title style="text-align:center;" no-padding>
+                 <img class="logotitle" src="assets/App-Logo.png"/>
+            </ion-title>
+        </ion-col>
+        <ion-col col-1>
+            <ion-title class="titlecart" no-padding *ngIf="boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+                 <p (click)="CartIcon()" class="imgcart"> {{Qty}} </p>
+        	  </ion-title>
+            <ion-title class="titlecart" no-padding *ngIf="!boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+        	  </ion-title>
+        </ion-col>
+        <ion-col col-1>
+            <button ion-button clear color="white" right class="popoverbutton" (click)="presentPopover($event)">
+              <ion-icon style="zoom:1.7;" name="md-more"></ion-icon>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header *ngIf="ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackButton" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+               <img class="logotitle_ios" src="assets/App-Logo.png"/>
+        </ion-col>
+        <ion-col col-1 *ngIf="boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+                 <p (click)="CartIcon()" class="imgcart"> {{Qty}} </p>
+       </ion-col>
+        <ion-col col-1 *ngIf="!boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+        </ion-col>
+        <ion-col col-1>
+            <button ion-button clear color="white" right class="popoverbutton" (click)="presentPopover($event)">
+              <ion-icon style="zoom:1.7;" name="md-more"></ion-icon>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background: #F4F0F0;">
+	<div class="SpanHeader_List">
+		<p class="Status" *ngIf="!form.status==''||!form.status==null||!form.status==undefined"> {{form.status}} </p>
+    	<div class="inner2">
+		        <img class="img2" [src]="form.image_uri" onError="this.src='assets/image_P2.jpg';" alt="" />
+		</div>
+		<div Style="padding-left:90px;padding-top:10px;">
+                <span style="display:table;">
+                    <div class="stars">
+                        <ion-icon color="gold" name="ios-star"></ion-icon>
+                        <ion-icon color="gold" name="ios-star"></ion-icon>
+                        <ion-icon color="gold" name="ios-star"></ion-icon>
+                        <ion-icon color="gold" name="ios-star"></ion-icon>
+                        <ion-icon color="grey" name="ios-star"></ion-icon>
+                    </div>
+                    <p class="Rating"> (112 rating)</p>
+                </span>
+                <span class="RestaurantName">
+                            {{form.name}}
+                </span>
+                <span class="HeaderInfo">
+                            {{form.info}}
+                </span>
+         </div>
+         <span class="Span_List_Items_Description" style="padding-top:0px;margin:0px 10px 10px 10px;font-size:13.5px;max-height:71px;">
+                {{form.description}}
+         </span>
+    </div>
+
+    <div class="Span_List" *ngFor="let category of form.categories">
+        <dl>
+			<div>
+			   		<dt> {{category.title}} </dt>
+
+				    <span *ngFor="let i of category.items">
+						    <span *ngIf="i.type=='dish'">
+							    <span class="Span_List_Items hr-list" (click)="ItemDetails(i.id)">
+					        		<p class="Price"> ${{i.price}} </p>
+					        		<span class="span_button_icon">
+					                     <ion-icon name="ios-arrow-forward" color="orange" item-right></ion-icon>
+					                </span>
+					                <div class="inner">
+					                       <img class="img1" [src]="i.image" onError="this.src='assets/image_P2.jpg';" alt="" />
+					                </div>
+					                <div Style="padding-left:90px;">
+					                    <span class="Span_List_Items_Title">
+					                            {{i.title}}
+					                    </span>
+					                    <span class="Span_List_Items_Description">
+					                            {{i.description}}
+					                    </span>
+					                </div>
+					        	</span>
+				        	</span>
+
+				        	<span *ngIf="i.type=='deal'">
+					        	<span class="Span_List_Items hr-list" (click)="ItemDetailsSubItems(i)">
+					        		<p class="Price"> ${{i.price}} </p>
+					        		<span class="span_button_icon">
+					                     <ion-icon name="ios-arrow-forward" color="orange" item-right></ion-icon>
+					                </span>
+					                <div class="inner">
+					                       <img class="img1" [src]="i.image" onError="this.src='assets/image_P2.jpg';" alt="" />
+					                </div>
+					                <div Style="padding-left:95px;">
+					                    <span class="Span_List_Items_Title">
+					                            {{i.title}}
+					                    </span>
+					                    <span class="Span_List_Items_Description">
+					                            {{i.description}}
+					                    </span>
+					                </div>
+					        	</span>
+				        	</span>
+		        	</span>
+			</div>
+		</dl>
+    </div>
+
+
+    <span *ngIf="boolMessage" class="MessageContainer">
+        <p class="Message">{{Message}}</p>
+        <p Style="text-align:center; margin=0px; padding: 7px 25px 7px 25px; display:block;" *ngIf="boolError">
+          <button ion-button class="button_text" (click)="Reload()"> RETRY </button>
+        </p>
+    </span>
+</ion-content>

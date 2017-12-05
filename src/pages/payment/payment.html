@@ -1,0 +1,116 @@
+<ion-header *ngIf="!ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackPageButton" Style="color:white;" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-10>
+            <ion-title class="titleheading_text" no-padding>
+                <p class="titleheading_text">Credit Card Payment Options</p>
+            </ion-title>
+        </ion-col>
+        <ion-col col-1>
+            <button ion-button clear color="white" right class="popoverbutton">
+              <ion-icon style="zoom:1.7;" name="md-more"></ion-icon>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header *ngIf="ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackPageButton" Style="color:white;" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-10>
+                 <p class="titleheading">Credit Card Payment Options</p>
+        </ion-col>
+        <ion-col col-1>
+            <button ion-button clear color="white" right class="popoverbutton">
+              <ion-icon style="zoom:1.7;" name="md-more"></ion-icon>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <p class="hr-list2 Heading" style="font-size:18px;padding-top: 10px;">  Your Information </p>
+  <span class="abc">
+
+
+        <ion-item no-padding class="Heading" stacked no-lines>
+               <ion-label class="LabelCardDetails" stacked><div class="requiredfields">*</div><div class="TextCenter">Name on card</div><div class="reqiredinfo">(As it appears on your credit card)</div></ion-label>
+               <ion-input class="LabelCardDetails" [(ngModel)]="name" rows="1" cols="50" [ngModelOptions]="{standalone: true}"> </ion-input>
+        </ion-item>
+
+        <ion-item no-padding class="Heading" stacked>
+               <ion-label class="LabelCardDetails" stacked><div class="requiredfields">*</div><div class="TextCenter">Credit Card Number</div><div class="reqiredinfo">16 digits on the front of your card. No spaces</div></ion-label>
+               <ion-input type="tel" class="LabelCardDetails" maxlength="16"[(ngModel)]="number" rows="1" cols="50" [ngModelOptions]="{standalone: true}"> </ion-input>
+        </ion-item>
+
+          <ion-item no-padding class="Heading" stacked no-lines>
+               <ion-label class="LabelCardDetails" stacked><div class="requiredfields2">*</div><div class="TextCenter2">Expiration Date</div><div class="reqiredinfo2">Find Expiration date on the front of your card</div></ion-label>
+          </ion-item>
+          <ion-row no-padding>
+              <ion-col col-6 no-padding>
+                <ion-item no-padding>
+                  <ion-select no-padding placeholder="Month" [(ngModel)]="Month" [ngModelOptions]="{standalone: true}">
+                    <ion-option value="1">1</ion-option>
+                    <ion-option value="2">2</ion-option>
+                    <ion-option value="3">3</ion-option>
+                    <ion-option value="4">4</ion-option>
+                    <ion-option value="5">5</ion-option>
+                    <ion-option value="6">6</ion-option>
+                    <ion-option value="7">7</ion-option>
+                    <ion-option value="8">8</ion-option>
+                    <ion-option value="9">9</ion-option>
+                    <ion-option value="10">10</ion-option>
+                    <ion-option value="11">11</ion-option>
+                    <ion-option value="12">12</ion-option>
+                  </ion-select>
+               </ion-item>
+              </ion-col>
+              <ion-col col-6 no-padding>
+                <ion-item no-padding>
+                    <ion-select no-padding placeholder="Year" [(ngModel)]="Year" [ngModelOptions]="{standalone: true}">
+                      <ion-option *ngFor="let Year of ArrayYear" value={{Year.id}}>{{Year.Year}}</ion-option>
+                    </ion-select>
+               </ion-item>
+            </ion-col>
+      </ion-row>
+
+        <ion-item no-padding class="Heading" stacked no-lines>
+               <ion-label class="LabelCardDetails" stacked><div class="requiredfields">*</div><div class="TextCenter">Security Code</div><div class="reqiredinfo">(CVV or CVV2. 3 Digits on the back. AMex: 4 on the front.</div></ion-label>
+               <ion-input type="tel" maxlength="4" class="LabelCardDetails" [(ngModel)]="code" rows="1" cols="50" [ngModelOptions]="{standalone: true}"> </ion-input>
+        </ion-item>
+  </span>
+      <ion-item no-lines>
+          <ion-label class="LabelCardDetails">Save my credit details for futur orders on the secure indolj payment system.</ion-label>
+          <ion-checkbox [(ngModel)]="SaveDetails" (ionChange)="SelectedCheckbox_update()" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+      </ion-item>
+
+      <span *ngIf="boolMessage" class="MessageContainer">
+          <p class="Message">{{Message}}</p>
+          <p Style="text-align:center; margin=0px; padding: 7px 25px 7px 25px; display:block;" *ngIf="boolError">
+            <button ion-button class="button_text" (click)="Submit()"> RETRY </button>
+          </p>
+      </span>
+</ion-content>
+
+<ion-footer no-lines no-border class="zero-padding" color="white" *ngIf="!boolMessage">
+    <span Style="margin=0px; padding: 7px 25px 10px 25px;; display:block; background:white;">
+      <button ion-button class="button_text" block (click)="Submit()"> Place Your Order </button>
+    </span>
+</ion-footer>

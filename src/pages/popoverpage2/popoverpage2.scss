@@ -1,0 +1,39 @@
+page-popoverpage2 {
+
+}
+
+.PaymentMethodPopover
+{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+
+.PaymentMethod_ListItems
+{
+    display: block;
+    margin: 7px 10px 5px 16px;
+    padding: 0px;
+    font: 15px/22px 'ralewaymedium';
+    color: $paymentMethod_popup_options_color;
+}
+
+.PaymentMethod_Heading
+{
+    font: bold 18px/20px 'ralewaybold';
+    display: block;
+    margin: 17px 15px 0px 15px;
+    padding: 0px;
+    color: $paymentMethod_popup_Heading_color;
+}
+
+.divider-line
+{
+    border-bottom: 1px solid $paymentMethod_popup_options_dividerlinecolor;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    background: white;
+    width: 100%;
+    text-align: left;
+}

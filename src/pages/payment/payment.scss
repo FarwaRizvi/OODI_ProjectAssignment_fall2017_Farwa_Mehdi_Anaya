@@ -1,0 +1,261 @@
+page-payment {
+
+  .requiredfields
+  {
+      color: red;
+      display: inline;
+      font-size: 38px;
+      padding: 0px;
+      margin: 0px;
+      position: absolute;
+      left: 0;
+      bottom: 26px;
+  }
+
+  .requiredfields2
+  {
+      color: red;
+      display: inline;
+      font-size: 38px;
+      padding: 0px;
+      margin: 0px;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+  }
+
+  .reqiredinfo2
+  {
+      color: #afabab;
+      display: inline;
+      font-size: 8px;
+      font-family: $FontFamily_Medium;
+  }
+  .reqiredinfo
+  {
+    color: #afabab;
+    display: inline;
+    padding-bottom: 10px;
+    font-size: 8px;
+    font-family: $FontFamily_Medium;
+    position: absolute;
+    top: 24px;
+  }
+
+  .TextCenter2
+  {
+    margin-left:15px;
+    font-size: $FontSize_12;
+  }
+  .TextCenter
+  {
+      margin-left: 15px;
+      font-size: $FontSize_12;
+      position: absolute;
+      top: 8px;
+  }
+
+  .cards
+  {
+      margin-top: 10px;
+      width: 250px;
+  }
+
+  .icon_creditcard
+  {
+      position: absolute;
+      left: 20px;
+      height: 25px;
+      margin-top: 39px;
+  }
+
+  .icon_paymentoptions
+  {
+      height: 40px;
+      width: 36px;
+      margin: 0px;
+      padding: 0px;
+      margin-bottom: -11px;
+      margin-right: 2px;
+  }
+
+  span.blackbutton
+  {
+    .button-md:hover:not(.disable-hover)
+    {
+      background-color: $button_BackGroundColorHoverBlack;
+    }
+  }
+
+  .LabelCardDetails
+  {
+    text-align:left;
+    font-family: $FontFamily_Medium;
+    font-size: $FontSize_13;
+    color: black !important;
+  }
+
+  .LabelCardDetails2
+  {
+    text-align:left;
+    font-family: $FontFamily_Medium;
+    font-size: $FontSize_13;
+    color: $WhiteColor;
+  }
+
+  .item.item-md .checkbox-md
+  {
+      margin: 8px 10px 9px 4px;
+  }
+
+  .checkbox-md .checkbox-icon
+  {
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      border-color: #08400F;
+      background: $WhiteColor;
+  }
+
+  .checkbox-md + .item-inner ion-label
+  {
+      margin-left: 0;
+      font-size: $FontSize_13;
+      white-space: pre-line;
+      font-family: $FontFamily_Bold;
+  }
+
+  .checkbox-md .checkbox-checked .checkbox-inner
+  {
+      left: 4px;
+      top: 2px;
+      border-radius: 50%;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #08400F;
+      border-color: #08400F;
+  }
+
+}
+
+.alert-md .alert-radio-label
+{
+    color: #1c4f22;
+    font-size: 16px;
+    font-family: $FontFamily_Medium;
+    padding: 5px 40px;
+}
+
+.alert-md .alert-title
+{
+    font-size: 19px;
+    color: #2e9a3b;
+    font-family: $FontFamily_Bold;
+    margin: -8px;
+    margin-bottom: 16px;
+}
+
+.alert-md .alert-radio-inner
+{
+    left: 3px;
+    background-color: $SecondaryColor;
+}
+
+.alert-md .alert-button .button-inner
+{
+    font-size: 16px;
+    color: $SecondaryColor;
+    font-family: $FontFamily_Bold;
+}
+.alert-md .alert-radio-icon
+{
+  left: 25px;
+  top: 0;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #1c4f22;
+}
+
+span.abc
+{
+  display: block;
+  margin: 17px 18px 0px 18px;
+
+  .label-md[stacked], .label-md[floating]
+  {
+      margin-left: 0;
+      margin-bottom: 0;
+      height: 25px;
+  }
+
+  ion-app [no-padding], ion-app [no-padding] .scroll-content
+  {
+    padding: 0;
+    margin-top: -1px;
+  }
+
+  .select-text
+  {
+      position: absolute;
+      right: 30px;
+      top: 13px;
+      max-width: 100%;
+      text-align:left;
+      font-size:$FontSize_13;
+      font-family: $FontFamily_Bold;
+      color: $BlackColor;
+  }
+
+  .select-md .select-icon
+  {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    right: 12px;
+    bottom: 8px;
+    zoom: 1.2;
+  }
+
+  .button-inner
+  {
+      justify-content: left;
+      border: 1px solid black;
+  }
+
+  .item-md.item-block .item-inner
+  {
+      padding-right: 8px;
+      border-bottom: 1px solid transparent !important;
+  }
+
+  .item-input ion-input, .item-input ion-textarea
+  {
+      position: static;
+      border: 1px solid black;
+  }
+
+  .item-input-has-focus .input-cover, .input-has-focus .input-cover
+  {
+      border-bottom: 1px solid transparent !important;
+  }
+
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner
+  {
+      border-bottom-color: transparent !important;
+      -webkit-box-shadow: inset 0 -1px 0 0 transparent !important;
+      box-shadow: inset 0 -1px 0 0 transparent !important;
+  }
+
+  .item-md.item-block .item-inner
+  {
+    padding-right: 0px !important;
+  }
+
+
+}

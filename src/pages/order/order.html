@@ -1,0 +1,143 @@
+<ion-header *ngIf="!ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackPageButton" Style="color:white;" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+            <ion-title style="text-align:center;" no-padding>
+                 <img class="logotitle" src="assets/App-Logo.png"/>
+            </ion-title>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header *ngIf="ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackButton" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+               <img class="logotitle_ios" src="assets/App-Logo.png"/>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <span class="Span_padding_OrderPage">
+    <ion-row class="zero-padding hr-list2">
+            <ion-col col-5>
+                  <p class="Detail_Text CenterAlign">  Your Order </p>
+            </ion-col>
+
+            <ion-col col-3>
+                    <p class="Detail_Text CenterAlign">  Quantity </p>
+             </ion-col>
+
+             <ion-col col-lg-2>
+                     <p class="Detail_Text CenterAlign" style="text-align:left;padding-left:6px;">  Price </p>
+             </ion-col>
+
+             <ion-col col-sm-2>
+             </ion-col>
+    </ion-row>
+  </span>
+
+  <span class="Nutrients-colored-span" style="background:#F4F0F0;margin-top:4px;margin-bottom:4px;display:inline-table;" *ngFor="let i of Order">
+          <ion-row class="zero-padding" align-items-center>
+                  <ion-col col-5>
+                          <p class="Detail_Text zero-padding" Style="text-align:left;padding-left:0px;"> {{i.dish_name}} </p>
+                  </ion-col>
+
+                  <ion-col col-3>
+                          <p class="Detail_Text zero-padding" Style="text-align:right;padding-left:0px; padding-right:0px;">
+                            <ion-grid no-padding class="QuantityGrid2">
+                                    <ion-row no-padding>
+                                          <ion-col col-4>
+                                                <button ion-button class="QuantityButton" small color="title" (click)="Minus(i.dish_id,i.dish_price,i.dish_qty)">
+                                                    <ion-icon name="remove"></ion-icon>
+                                                </button>
+                                          </ion-col>
+                                          <ion-col col-4>
+                                            <p class="Qty_Label" style="margin-top:3.5px;"> {{i.dish_qty}} </p>
+                                          </ion-col>
+                                          <ion-col col-4>
+                                                <button ion-button class="QuantityButton" small color="title" (click)="Plus(i.dish_id,i.dish_price,i.dish_qty)">
+                                                    <ion-icon name="add"></ion-icon>
+                                                </button>
+                                          </ion-col>
+                                    </ion-row>
+                            </ion-grid>
+                          </p>
+                   </ion-col>
+
+                   <ion-col col-lg-2 style="margin:0px;padding:0px;">
+                           <p class="Detail_Text zero-padding totaltext"> ${{i.total}} </p>
+                   </ion-col>
+
+                   <ion-col col-sm-2 style="margin:0px;padding:0px;">
+                           <ion-icon color="grey" name="md-close-circle" style="zoom:1.3;margin-top:3px;" (click)="RemoveItem(i.dish_id,i.total)"></ion-icon>
+                   </ion-col>
+          </ion-row>
+  </span>
+
+  <span class="Span_padding_OrderPage">
+      <div class="hr-list2">
+          <span style="display:-webkit-box;">
+              <p class="Detail_Text LeftAlign" style="width: 100%;">
+                <ion-icon color="title" name="md-add-circle" style="zoom:1.35;" (click)="BackPage()">
+                  <p class="AddMoreText">
+                    Add more items
+                  </p>
+                </ion-icon>
+              </p>
+          </span>
+      </div>
+      <div class="hr-list2">
+          <span style="display:-webkit-box;">
+              <p class="Detail_Text LeftAlign"> Subtotal </p>
+              <p class="Detail_Text RightAlign"> ${{Subtotal}} </p>
+          </span>
+
+          <span style="display:-webkit-box;">
+              <p class="Detail_Text LeftAlign">Service fee</p>
+              <p class="Detail_Text RightAlign"> $10</p>
+          </span>
+
+          <span style="display:-webkit-box;">
+              <p class="Detail_Text LeftAlign">VAT Tax</p>
+              <p class="Detail_Text RightAlign">%12</p>
+          </span>
+      </div>
+      <span style="display:-webkit-box;">
+          <p class="Detail_Text LeftAlign">Total Amount</p>
+          <p class="Detail_Text RightAlign">${{Amount}}</p>
+      </span>
+   </span>
+</ion-content>
+
+<ion-footer no-lines no-border class="zero-padding" color="white">
+    <span Style="margin=0px; padding: 7px 25px 10px 25px;; display:block; background:white;">
+      <button ion-button class="button_text" block (click)="Continue()"> Continue </button>
+    </span>
+</ion-footer>

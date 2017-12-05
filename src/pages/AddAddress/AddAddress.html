@@ -1,0 +1,131 @@
+<ion-header *ngIf="!ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackPageButton" Style="color:white;" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+            <ion-title style="text-align:center;" no-padding>
+                 <img class="logotitle" src="assets/App-Logo.png"/>
+            </ion-title>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header *ngIf="ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackButton" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+               <img class="logotitle_ios" src="assets/App-Logo.png"/>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <span class="Span_padding_OrderPage" style="margin-top:30px;">
+        <p class="hr-list2 Heading" style="font-size:18px;">  Your Information </p>
+
+        <ion-item no-padding class="Heading">
+               <ion-input type="Email" [(ngModel)]="Email" placeholder="Enter Your Email Address" rows="1" cols="50"  [ngModelOptions]="{standalone: true}"> </ion-input>
+        </ion-item>
+
+        <ion-item no-padding class="Heading">
+               <ion-input type="tel" [(ngModel)]="MobileNumber" placeholder="Enter Your Mobile Number" rows="1" cols="50"  [ngModelOptions]="{standalone: true}" ></ion-input>
+        </ion-item>
+
+        <ion-item no-padding class="Heading">
+               <ion-textarea type="text" [(ngModel)]="Address" placeholder="Enter Delivery Address" rows="4" cols="50"  [ngModelOptions]="{standalone: true}" ></ion-textarea>
+        </ion-item>
+
+        <ion-item no-padding class="Heading">
+               <ion-textarea type="text" [(ngModel)]="Comments" placeholder="Add Your Comments" rows="1" cols="50"  [ngModelOptions]="{standalone: true}" ></ion-textarea>
+        </ion-item>
+  </span>
+
+  <span class="Span_padding_OrderPage" style="margin-top:30px;">
+        <p class="hr-list2 Heading" style="font-size:18px;">  Your Payment Method </p>
+
+        <ion-grid>
+                <ion-row>
+                        <ion-col col-4>
+                            <span class="grid_image" (click)="CashonDelivery()" *ngIf="!bool_CashonDelivery">
+                                  <div class="img_grid">
+                      		          		<img style="height:auto;width:65px; margin-top:-2px;" src="assets/cos-96.png">
+                      		         </div>
+                      		         <p class="p_grid">Cash on Delivery</p>
+                            </span>
+                            <span class="grid_image_color" (click)="CashonDelivery()" *ngIf="bool_CashonDelivery">
+                                  <div class="img_grid">
+                                        <img style="height:auto;width:65px; margin-top:-2px;" src="assets/cos-96.png">
+                                   </div>
+                                   <p class="p_grid">Cash on Delivery</p>
+                            </span>
+                        </ion-col>
+
+                        <ion-col col-4 >
+                            <span class="grid_image" (click)="PickFromRestaurant()" *ngIf="!bool_PickFromRestaurant">
+                                  <div class="img_grid">
+                                        <img style="height:auto;width:50px;margin-top:2px;" src="assets/pickup-96.png">
+                                   </div>
+                                   <p class="p_grid">Pick from Restaurant</p>
+                            </span>
+                            <span class="grid_image_color" (click)="PickFromRestaurant()" *ngIf="bool_PickFromRestaurant">
+                                  <div class="img_grid">
+                                        <img style="height:auto;width:50px;margin-top:2px;" src="assets/pickup-96.png">
+                                   </div>
+                                   <p class="p_grid">Pick from Restaurant</p>
+                            </span>
+                        </ion-col>
+
+                        <ion-col col-4>
+                            <span class="grid_image poper" (click)="CreditCardPayment($event)" *ngIf="!bool_CreditCardPayment">
+                                    <div class="img_grid">
+                                          <img style="height:auto;width:50px;margin-top:2px;" src="assets/card-96.png">
+                                     </div>
+                                     <p class="p_grid">Credit Card Payment</p>
+                            </span>
+                            <span class="grid_image_color poper" (click)="CreditCardPayment($event)" *ngIf="bool_CreditCardPayment">
+                                     <div class="img_grid">
+                                          <img style="height:auto;width:50px;margin-top:2px;" src="assets/card-96.png">
+                                     </div>
+                                     <p class="p_grid">Credit Card Payment</p>
+                            </span>
+                        </ion-col>
+                </ion-row>
+        </ion-grid>
+  </span>
+
+  <span *ngIf="boolMessage" class="MessageContainer">
+      <p class="Message">{{Message}}</p>
+      <p Style="text-align:center; margin=0px; padding: 7px 25px 7px 25px; display:block;" *ngIf="boolError">
+        <button ion-button class="button_text" (click)="Submit()"> RETRY </button>
+      </p>
+  </span>
+</ion-content>
+
+<ion-footer no-lines no-border class="zero-padding" color="white" *ngIf="!boolMessage">
+    <span Style="margin=0px; padding: 7px 25px 10px 25px;; display:block; background:white;">
+      <button ion-button class="button_text" block (click)="Submit()"> Submit </button>
+    </span>
+</ion-footer>

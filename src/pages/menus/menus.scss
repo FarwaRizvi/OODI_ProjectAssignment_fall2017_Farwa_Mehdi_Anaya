@@ -1,0 +1,284 @@
+page-menus {
+
+}
+
+.platform-ios .BackButton
+{
+  color: white;
+}
+
+.Rating
+{
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+  font-family: $FontFamily_Medium;
+  font-size: $FontSize_13;
+  color: $BlackColor;
+}
+
+.stars
+{
+  display: inline-block;
+  padding-right: 4px;
+}
+
+.RestaurantName
+{
+    display: block;
+    font-family: $FontFamily_Bold;
+    font-size: $RestaurantName_MenuPage_FontSize;
+    color: $BlackColor;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    width: fit-content;
+    margin-right: 50px;
+}
+
+.SpanHeader_List
+{
+    display: block;
+    height: auto;
+    top: 0px;
+    padding: 5px;
+    background: $LightGreyColor;
+    position: initial;
+    overflow: hidden;
+    width: 100%;
+    z-index: 0;
+}
+
+.inner2
+{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 5px;
+}
+.img2
+{
+    width:auto;
+    height:auto;
+}
+
+.Span_List_Items_Title
+{
+	  display: block;
+    font-family: $FontFamily_Bold;
+    font-size: $FontSize_13;
+    color: $BlackColor;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: fit-content;
+    margin-right: 50px;
+}
+
+.Span_List_Items_Description
+{
+    font-family: $FontFamily_Medium;
+    font-size: $FontSize_12;
+    overflow: hidden;
+    display: block;
+    height: auto;
+    max-height: 65px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-right: 12px;
+    line-height: 1.4;
+    color: $Description_MenuItems_FontColor;
+}
+
+.HeaderInfo
+{
+	  height: auto;
+    padding-bottom: 15px;
+    margin-top: -4px;
+    margin-right: 2px;
+    font-size: $FontSize_11;
+    font-family: $FontFamily_Medium;
+    overflow: hidden;
+    display: block;
+}
+
+.Span_List
+{
+    display: block;
+    width: 100%;
+    background: $WhiteColor;
+    position: relative;
+    z-index: 50;
+}
+
+.Span_List_Items
+{
+   	background: $WhiteColor;
+    display: block;
+    padding: 10px;
+    min-height: 105px;
+    height: auto;
+}
+
+.inner
+{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #9DA09C;
+    height: 85px;
+    width: 85px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: -3px;
+}
+.img1
+{
+    width:86px;
+    height:86px;
+}
+
+.span_button_icon
+{
+    zoom: 1.4;
+    position: absolute;
+    right: 4px;
+    padding-top: 25px;
+}
+
+.Price
+{
+  	position: absolute;
+  	padding: 0px;
+  	margin: 0px;
+  	margin-top: 4px;
+  	padding: 2px;
+  	right: 4px;
+  	font-size: $FontSize_13;
+  	font-family: $FontFamily_Bold;
+  	background: $PriceBackgroundColor;
+    color: $BlackColor;
+}
+
+.Status
+{
+    position: absolute;
+    margin: 0px;
+    margin-top: 10px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    right: 4px;
+    font-size: $FontSize_12;
+    font-family: $FontFamily_Bold;
+    background: $StatusBackgroundColor;
+    color: $WhiteColor;
+}
+
+.hr-list
+{
+  border-bottom: $DottedDivider_Width_MenuPage dotted $DottedDivider_MenuPage;
+  padding:7px;
+}
+
+//Sticky
+dl {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+dl > div {
+  background: #FFF;
+  padding: 0px;
+}
+
+dt {
+  background: $PrimaryColor;
+  border-bottom: 1px solid #989EA4;
+  border-top: 1px solid #717D85;
+  color: $Menutitles_FontColor;
+  font: bold 14px/18px $FontFamily_Medium;
+  margin: 0;
+  padding: 3px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  text-align: center;
+}
+
+ion-popover ion-backdrop{
+  background-color: $popoverBackdropColor !important;
+  top: 0 !important;
+}
+
+ion-alert ion-backdrop {
+    background-color: $alertBackdropColor !important;
+    top: 0 !important;
+    opacity: 0.5 !important;
+}
+
+div.popover-content {
+    top: 40px !important;
+    left: unset !important;
+    transform: scale(1) !important;
+    right: 18px !important;
+}
+
+.platform-ios div.popover-content {
+    top: 60px !important;
+    left: unset !important;
+    transform: scale(1) !important;
+    right: 18px !important;
+}
+
+.alert-md .alert-wrapper
+{
+    border-radius: 9px;
+    max-width: 280px;
+    background-color: $WhiteColor;
+    -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}
+
+.alert-md .alert-title
+{
+    font-size: 19px;
+    color: #488aff;
+    font-family: $FontFamily_Bold;
+    margin: -8px;
+    margin-bottom: 16px;
+}
+
+.alert-sub-title {
+    padding: 0;
+    font-weight: normal;
+    margin: -8px;
+    margin-bottom: -15px;
+    margin-top: 3px;
+    font-family: $FontFamily_Medium;
+    font-size: $FontSize_15;
+}
+
+.alert-md .alert-button .button-inner
+{
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-size: 18px;
+  color: #488aff;
+  font-family: $FontFamily_Bold;
+}
+
+.alert-md .alert-button
+{
+    color: #488aff;
+    margin: 0px;
+}

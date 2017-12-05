@@ -1,0 +1,78 @@
+<ion-header *ngIf="!ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-9>
+            <ion-title style="text-align:center;" no-padding>
+                 <img class="logotitle" src="assets/App-Logo.png"/>
+            </ion-title>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header *ngIf="ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-9>
+               <img class="logotitle_ios" src="assets/App-Logo.png"/>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+        <ion-col col-1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <span class="Slider-Span">
+  <ion-slides class="Slider-Span-Slides" initialSlide="0" pager="true" autoplay="3000" speed="200" no-padding>
+    <ion-slide *ngFor="let slide of images" no-padding Style="margin:0px;">
+        <img class="imgmg" [src]="slide.image" onError="this.src='assets/image-placeholder.jpg';" alt="" />
+    </ion-slide>
+  </ion-slides>
+  </span>
+  <ion-grid>
+        <ion-row>
+              <ion-col>
+                <div class="hr-solid-line"> </div>
+              </ion-col>
+              <ion-col>
+              </ion-col>
+              <ion-col>
+                <div class="hr-solid-line"> </div>
+              </ion-col>
+        </ion-row>
+  </ion-grid>
+  <br>
+  <span class="Promotion-Span">
+    <p class="slogan_header"> {{form.slogan}} </p>
+    <p class="slogan"> {{form.sub_slogan}} </p>
+    <p class="Information">{{form.information}}</p>
+  </span>
+
+  <span *ngIf="boolMessage" class="MessageContainer">
+      <p class="Message">{{Message}}</p>
+      <p Style="text-align:center; margin=0px; padding: 7px 25px 7px 25px; display:block;" *ngIf="boolError">
+        <button ion-button class="button_text" (click)="Reload()"> RETRY </button>
+      </p>
+  </span>
+</ion-content>
+
+<ion-footer no-lines no-border class="zero-padding" color="white" *ngIf="!boolMessage">
+    <span Style="margin=0px; padding: 7px 25px 10px 25px; display:block; background:white;">
+      <button ion-button color="button_color" class="button_text" block (click)="MenusPage()"> View Restaurant Menus </button>
+    </span>
+</ion-footer>

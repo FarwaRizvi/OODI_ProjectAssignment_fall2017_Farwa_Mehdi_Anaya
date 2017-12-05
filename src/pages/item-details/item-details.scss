@@ -1,0 +1,212 @@
+page-item-details {
+
+}
+
+.popoverbutton
+{
+	position: absolute;
+	right: 0px;
+	top: -21px;
+}
+
+.platform-ios .popoverbutton
+{
+	position: absolute;
+	right: 0px;
+	top: -20px;
+}
+
+.titlecart
+{
+	height:40px;
+	width:35px;
+	text-align: center;
+	position:absolute;
+}
+
+.imgcart
+{
+	position: absolute;
+	text-align: center;
+	width: 20px;
+	right: 24px;
+	top: -17px;
+	color: $PrimaryColor;
+	font-size: $FontSize_11;
+	font-family: $FontFamily_Bold;
+}
+
+.platform-ios .imgcart
+{
+	position: absolute;
+	text-align: center;
+	width: 20px;
+	right: 24px;
+	top: -19px;
+	color: $PrimaryColor;
+	font-size: $FontSize_11;
+	font-family: $FontFamily_Bold;
+}
+
+.carticon
+{
+	height: 28px;
+	width: auto;
+	position: absolute;
+	top: -16px;
+	right: 20px;
+}
+
+.zero-padding
+{
+		margin: 0px;
+		padding: 0px;
+}
+
+.Span_Table
+{
+    display: table;
+    color: $BlackColor;
+    background: rgb(251, 249, 191);
+    width: 100%;
+}
+
+.DetailsPage_TextHeader
+{
+    color: #730e0e;
+    text-align:center;
+    padding:0px;
+    margin:0px;
+    margin-top:6px;
+    font-family: $FontFamily_Medium;
+    font-size: $FontSize_13;
+}
+
+.inlineblock-padding
+{
+    display:inline-block;
+    padding:0px;
+    vertical-align: top;
+    width: 84px;
+}
+
+.MarginPadding
+{
+		display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.innerAllergen
+{
+    height: 40px;
+}
+
+.imgAllergen
+{
+    margin-left: 12px;
+    width:60px;
+    height:auto;
+    position: absolute;
+}
+
+.TitleAllergen
+{
+	text-align: center;
+	font-family: $FontFamily_Medium;
+	font-size: $FontSize_12;
+	color: $BlackColor;
+}
+
+.Details_Description
+{
+		font-family: $FontFamily_Medium;
+		font-size: $FontSize_14;
+		color: $BlackColor;
+    padding: 6px;
+    padding-top: 10px;
+    text-align: justify;
+}
+
+.Heading
+{
+    text-align:center;
+    border-color:#3BC224;
+    padding:0px;
+    margin:0px;
+    margin-top: 12px;
+    font-family: $FontFamily_Medium;
+    font-weight: bold;
+    font-size: $FontSize_13;
+		color: $BlackColor;
+}
+
+.hr-list2
+{
+    border-bottom: $DottedDivider_Width_DetailsPage dotted $PrimaryColor;
+    margin-bottom: 8px;
+}
+
+.Nutrients-white-span
+{
+		display: inline-block;
+    color: $BlackColor;
+    background: $LightColored_Span;
+    height: 37px;
+    width: 100%;
+    padding: 0px;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin: 0px;
+    line-height: 25px;
+}
+
+.Nutrients-colored-span
+{
+		display:inline-block;
+    color: $BlackColor;
+    background: $DarkColored_Span;
+    height: 37px;
+    width:100%;
+    padding-top:4px;
+    padding-bottom :4px;
+    padding-right:6px;
+    padding-left:6px;
+    margin:0px;
+}
+
+.Detail_Text
+{
+    margin: 0px;
+    padding-left:14px;
+    padding-right:14px;
+    font-size: $FontSize_13;
+    font-family: $FontFamily_Medium;
+		color: $BlackColor;
+}
+
+.button-small-md.QuantityButton
+{
+		font-family: $FontFamily_Bold;
+		height: 1.9em;
+    width: 1.9em;
+		font-size: 1.3rem;
+}
+
+.QuantityGrid
+{
+		margin-top: -7px;
+		position: absolute;
+		right: 9px;
+		width: 93px;
+}
+
+.Total
+{
+		position: absolute;
+    right: 12px;
+		padding-left:0px;
+		padding-right: 0px;
+}

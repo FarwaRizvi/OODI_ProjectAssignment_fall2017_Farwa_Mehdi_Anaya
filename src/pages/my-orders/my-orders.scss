@@ -1,0 +1,131 @@
+page-my-orders {
+
+}
+
+.colPadding1
+{
+  height: 50px;
+  margin-top: 15px;
+}
+
+.colPadding2
+{
+  height: 50px;
+  margin-top: 4px;
+}
+
+.colPadding3
+{
+  margin-top: 28px;
+}
+
+
+.titleheading_text
+{
+    text-align:center;
+    font-family:ralewaybold;
+    font-size:18px;
+    color: $WhiteColor;
+}
+
+.platform-ios .titleheading
+{
+    font-size: 18px;
+    text-align: center;
+    font-family: $FontFamily_Bold;;
+    color: $WhiteColor;
+    margin-left: 8px;
+
+}
+
+.number
+{
+  color: red;
+  margin: 0px;
+  display: inline-block;
+}
+
+.text
+{
+  margin: 0px;
+  padding-left: 2px;
+  display: inline-block;
+}
+
+.MyOrders_ListSpan
+{
+    display: block;
+    background: $LightGreyColor;
+    margin: 15px;
+    padding: 2px 2px 15px 2px;
+}
+
+.MyOrders_Heading
+{
+  display:-webkit-box;
+  border-bottom: 1px solid #969796;
+  margin: 6px;
+
+  .RightList
+  {
+    font-size: $FontSize_13;
+    font-family: $FontFamily_Bold;
+    padding: 6px;
+    width: 30% !important;
+  }
+
+  .LeftList
+  {
+    font-size: $FontSize_13;
+    font-family: $FontFamily_Bold;
+    padding: 6px;
+    width: 50% !important;
+  }
+
+  .CenterList
+  {
+    font-size: $FontSize_13;
+    font-family: $FontFamily_Bold;
+    padding: 6px 0px 6px 0px;
+    width: 20% !important;
+    text-align: center;
+  }
+}
+
+.MyOrders_List
+{
+  display:-webkit-box;
+  border-bottom: 1px solid #969796;
+  margin: 0px 6px;
+
+  .RightList
+  {
+    padding: 8px 6px 8px 0px;
+    font-size: $FontSize_13;
+    font-family: $FontFamily_Bold;
+    color: $BlackColor;
+    width: 30% !important;
+    margin: 0px;
+  }
+
+  .LeftList
+  {
+    padding: 8px 0px 8px 6px;
+    font-size: $FontSize_12;
+    font-family: $FontFamily_Bold;
+    color: $BlackColor;
+    width: 50% !important;
+    margin: 0px;
+  }
+
+  .CenterList
+  {
+    padding: 8px 0px 8px 0px;
+    font-size: $FontSize_12;
+    font-family: $FontFamily_Bold;
+    color: $BlackColor;
+    width: 20% !important;
+    text-align: center;
+    margin: 0px;
+  }
+}

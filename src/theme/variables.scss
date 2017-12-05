@@ -1,0 +1,135 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+$button_BackGroundColorHover: #09941b;
+$button_BackGroundColorHoverBlack: #424242;
+$PrimaryColor: #08400F;
+$SecondaryColor: #068716;
+$BlackColor: #000000;
+$WhiteColor: #FFFFFF;
+$LightGreyColor: #F4F0F0;
+$FontSize_11: 11px;
+$FontSize_12: 12px;
+$FontSize_13: 13px;
+$FontSize_14: 14px;
+$FontSize_15: 15px;
+$FontFamily_Bold: 'ralewaybold';
+$FontFamily_Medium: 'ralewaymedium';
+//----->>>*PromotionPage*<<<-----//
+$Slogan_PromotionPage: #880824;
+$Slogan_FontSize_PromotionPage: 22px;
+$Input-border-color: #c36161;
+$PromotionPage_strokeWidth: 1.5px;
+//----->>>*OrderPage*<<<-----//
+$OrderPage-CentrerAlign-FontSize : 16px;
+//----->>>*AddAddressPage*<<<-----//
+$color_Imagegridbackground1: #fffcaf;
+$ImageGrid_BorderWidth: 2px;
+//----->>>*DetailsPage*<<<-----//
+$DottedDivider_Width_DetailsPage: 3px;
+$LightColored_Span: #fdfcfc;
+$DarkColored_Span: rgb(251, 249, 191);
+//----->>>*MenuPage*<<<-----//
+$DottedDivider_MenuPage : #E1E1E1;
+$DottedDivider_Width_MenuPage : 3px;
+$Menutitles_FontColor : #F9F7D0;
+$RestaurantName_MenuPage_FontSize : 17px;
+$Description_MenuItems_FontColor : #424242;
+$StatusBackgroundColor: #29E645;
+$PriceBackgroundColor: rgb(251, 249, 191);
+$alertBackdropColor : rgba(0, 0, 0, 0.5);
+$popoverBackdropColor: transparent;
+$greyStarColor : #AFABAB;
+$goldStarColor : #FCB30A;
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:      $PrimaryColor,
+  dark:         $BlackColor,
+  title:        $SecondaryColor,
+  white:        $WhiteColor,
+  orange:       #F6960C,
+  button_color: $SecondaryColor,
+  B_Qty:        #730e0e,
+  grey:         $greyStarColor,
+  gold:         $goldStarColor,
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+//Content
+$content-padding : 0px 0px 0px 0px;
+$content-md-padding : 0px 0px 0px 0px;
+$content-margin : 0px;
+$content-md-margin : 0px;
+$toolbar-ios-height:	53px;
+$toolbar-md-height:	53px;
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

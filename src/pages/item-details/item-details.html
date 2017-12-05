@@ -1,0 +1,182 @@
+<ion-header *ngIf="!ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackPageButton" Style="color:white;" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+            <ion-title style="text-align:center;" no-padding>
+                 <img class="logotitle" src="assets/App-Logo.png"/>
+            </ion-title>
+        </ion-col>
+        <ion-col col-1>
+            <ion-title class="titlecart" no-padding *ngIf="boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+                 <p (click)="CartIcon()" class="imgcart"> {{Qty}} </p>
+        	  </ion-title>
+            <ion-title class="titlecart" no-padding *ngIf="!boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+        	  </ion-title>
+        </ion-col>
+        <ion-col col-1>
+            <button ion-button clear color="white" right class="popoverbutton" (click)="presentPopover($event)">
+              <ion-icon style="zoom:1.7;" name="md-more"></ion-icon>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header *ngIf="ios_css">
+  <ion-toolbar color="title" no-padding>
+    <ion-grid no-padding>
+      <ion-row align-items-center>
+        <ion-col col-1>
+            <button ion-button clear class="BackButton" left (click)="BackPage()">
+              <ion-icon style="zoom:1.7;" name="ios-arrow-back"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-9>
+               <img class="logotitle_ios" src="assets/App-Logo.png"/>
+        </ion-col>
+        <ion-col col-1 *ngIf="boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+                 <p (click)="CartIcon()" class="imgcart"> {{Qty}} </p>
+       </ion-col>
+        <ion-col col-1 *ngIf="!boolQty">
+            		 <img (click)="CartIcon()" class="carticon" src="assets/cart1.png"/>
+        </ion-col>
+        <ion-col col-1>
+            <button ion-button clear color="white" right class="popoverbutton" (click)="presentPopover($event)">
+              <ion-icon style="zoom:1.7;" name="md-more"></ion-icon>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="hr-solid-line" style="display:block; width:100%; text-align:center;">
+    		<img Style="height:240px; width:auto;" [src]="form.image"  onError="this.src='assets/image-placeholder.jpg';" alt="" />
+  </div>
+
+	<span Style="display:block;padding:0px;">
+          <p class="hr-list2 Heading">  {{form.title}} </p>
+    </span>
+
+	<span class="MarginPadding">
+			<span *ngIf="SubItems" style="display:block;padding-left:20px;">
+					<p class="Details_Description" *ngFor="let item of form.sub_items">
+						{{item.qty}} x {{item.title}}
+					</p>
+			</span>
+
+        <div class="Details_Description" *ngIf="Description" [innerHTML]="form.description"></div>
+
+			<span class="Span_Table" *ngIf="Allergen">
+		        <p class="DetailsPage_TextHeader" > Allergens </p>
+		        <span class="inlineblock-padding" *ngFor="let allergens of form.allergens">
+		                <div class="innerAllergen">
+		                      <img class="imgAllergen" [src]="allergens.small_image_uri"  onError="this.src='assets/image-placeholder.jpg';" alt="" />
+		                </div>
+		                <p class="TitleAllergen"> {{allergens.title}} </p>
+		        </span>
+		    </span>
+    </span>
+
+    <span Style="display:block;padding:0px;" *ngIf="Nutrients">
+          <p class="hr-list2 Heading">  Dish Nutrients </p>
+    </span>
+    <span class= "MarginPadding" *ngFor="let nutrients of form.nutrients">
+            <span class="Nutrients-colored-span" *ngIf="nutrients.color && Nutrients">
+                          <ion-row class="zero-padding">
+                              <ion-col col-8>
+                                  <p class="Detail_Text zero-padding"> {{nutrients.title}}  </p>
+                              </ion-col>
+                              <ion-col col-4>
+                                  <p class="Detail_Text zero-padding" Style="text-align:right;"> {{nutrients.qty}} </p>
+                              </ion-col>
+                          </ion-row>
+            </span>
+            <span class="Nutrients-white-span" *ngIf="nutrients.white && Nutrients">
+                        <ion-row no-padding>
+                            <ion-col col-8>
+                                <p class="Detail_Text zero-padding">  {{nutrients.title}}  </p>
+                            </ion-col>
+                            <ion-col col-4>
+                                <p class="Detail_Text zero-padding" Style="text-align:right;"> {{nutrients.qty}} </p>
+                            </ion-col>
+                        </ion-row>
+            </span>
+    </span>
+
+    <span Style="display:block;padding:0px;">
+          <p class="hr-list2 Heading">  Order Now </p>
+    </span>
+    <span class="Nutrients-colored-span" style="margin-top:4px; margin-bottom:4px;">
+            <ion-row class="zero-padding">
+                    <ion-col col-8>
+                            <p class="Detail_Text zero-padding" Style="text-align:left;"> Quantity </p>
+                    </ion-col>
+            		<ion-col col-4>
+                    		<p class="Detail_Text zero-padding" Style="text-align:right;">
+                          <ion-grid no-padding class="QuantityGrid">
+                                  <ion-row no-padding>
+                                        <ion-col col-4>
+                                              <button ion-button class="QuantityButton" small color="title" (click)="Minus()">
+                                                  <ion-icon name="remove"></ion-icon>
+                                              </button>
+                                        </ion-col>
+                                        <ion-col col-4>
+                                          <p class="Qty_Label"> {{quantity}} </p>
+                                        </ion-col>
+                                        <ion-col col-4>
+                                              <button ion-button class="QuantityButton" small color="title" (click)="Plus()">
+                                                  <ion-icon name="add"></ion-icon>
+                                              </button>
+                                        </ion-col>
+                                  </ion-row>
+                          </ion-grid>
+                    		</p>
+            		 </ion-col>
+            </ion-row>
+    </span>
+    <span class="Nutrients-colored-span" style="margin-top:4px; margin-bottom:4px;">
+            <ion-row class="zero-padding">
+                    <ion-col col-8>
+                            <p class="Detail_Text zero-padding" Style="text-align:left;"> Total Price </p>
+                    </ion-col>
+            		<ion-col col-4>
+                    		<p class="Detail_Text zero-padding Total">
+                    		$ {{Total}} </p>
+            		 </ion-col>
+            </ion-row>
+    </span>
+
+    <span Style="display:block;padding:0px;">
+          <p class="hr-list2 Heading">  Special Request (Optional) </p>
+    </span>
+    <ion-item no-padding class="Heading">
+           <ion-textarea type="text" [(ngModel)]="SpecialRequest" placeholder="Type Here" rows="1" cols="50"  [ngModelOptions]="{standalone: true}" ></ion-textarea>
+    </ion-item>
+
+    <span *ngIf="boolMessage" class="MessageContainer">
+        <p class="Message">{{Message}}</p>
+        <p Style="text-align:center; margin=0px; padding: 7px 25px 7px 25px; display:block;" *ngIf="boolError">
+          <button ion-button class="button_text" (click)="Reload()"> RETRY </button>
+        </p>
+    </span>
+
+</ion-content>
+
+<ion-footer no-lines no-border class="zero-padding" color="white" *ngIf="!boolMessage">
+    <span Style="margin=0px; padding: 7px 25px 7px 25px; display:block; background:white;">
+      <button ion-button class="button_text" block (click)="OrderPage()"> Add to Order </button>
+    </span>
+</ion-footer>
